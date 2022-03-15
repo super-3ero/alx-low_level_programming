@@ -1,5 +1,5 @@
 #include <unistd.h>
-/*#include "main.h"*/
+#include "main.h"
 /**
  * main - Entry point
  * Description: prints 'Holberton \n'
@@ -7,8 +7,6 @@
  */
 int main(void)
 {
-C
-
 char str[] = "putchar\n";
 int i = 0;
 
