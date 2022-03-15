@@ -1,60 +1,51 @@
 #include "main.h"
+
 /**
- *print_times_table - prints timestable from n
+ * print_times_table - Prints a multiplication table up to param
+ * @n: The number to be treated
  *
- *@n:input
- *
- *Return: void
- *
+ * Return: Number matrix
  */
 void print_times_table(int n)
 {
-	int result;
+	int x, y, z;
 
-	if (n <= 15 && n > 0)
+	if (n >= 0 && n <= 14)
 	{
-		int i;
-
-		for (i = 0; i <= n; i++)
+		for (x = 0; x <= n; x++)
 		{
-			int j;
-
-			for (j = 0; j <= n; j++)
+			for (y = 0; y <= n; y++)
 			{
-				result = i * j;
-				if (j == 0)
+				z = x * y;
+				if (z > 99)
 				{
-					_putchar('0' + result);
+					_putchar(',');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
 				}
-				else if (result >= 10)
+				else if (z > 9)
 				{
-					_putchar(' ');
-					_putchar('0' + (result / 10));
-					_putchar('0' + (result % 10));
-				}
-				else if (result >= 100)
-				{
-					_putchar(' ');
-					_putchar('0' + (result / 100));
-					_putchar('0' + ((result / 10) % 10));
-					_putchar('0' + (result % 10));
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
 				}
 				else
 				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(result + '0');
-				}
-				if (j != n)
-				{
-					_putchar(',');
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
 				}
 			}
 			_putchar('\n');
 		}
-	}
-	else
-	{
-		_putchar('\n');
 	}
 }
