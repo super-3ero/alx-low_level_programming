@@ -7,15 +7,15 @@
 
 int main(void)
 {
-char str[] ="putchar"
+char str[] ="putchar";
 int i=0;
-while (i<7)
+while (i < 7)
 	{
 
 	_putchar(str[i]);
 	i++;
 	}
-	_putchar('\n')
+	_putchar('\n');
 return (0);
 }
 
